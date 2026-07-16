@@ -1,7 +1,7 @@
 {
   "name": "wedding-invitation",
   "version": "1.0.0",
-  "description": "Sabeeha Abdul Nasir & Muhammed Shibin \u2014 Nikah Invitation",
+  "description": "Muhammed Shibin & Sabeeha Abdul Nasir \u2014 Nikah Invitation",
   "scripts": {
     "dev": "npx serve . -p 5173",
     "start": "npx serve . -p 5173"

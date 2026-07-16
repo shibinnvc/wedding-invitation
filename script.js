@@ -18,7 +18,7 @@
   /* ---------- Start the nasheed (user gesture allows playback) ---------- */
   function startAudio() {
     if (!audio) return;
-    audio.volume = 0.6;
+    audio.volume = 0.1;
     const p = audio.play();
     if (p && typeof p.then === "function") {
       p.then(() => {
@@ -88,8 +88,21 @@
     });
   }
 
+  /* ---------- Auto-pause music when tab is hidden; resume on return ---------- */
+  if (audio && audioBtn) {
+    document.addEventListener("visibilitychange", () => {
+      const userMuted = audioBtn.getAttribute("aria-pressed") === "true";
+      if (document.hidden) {
+        if (!audio.paused) audio.pause();
+      } else if (opened && !userMuted && audio.paused) {
+        const p = audio.play();
+        if (p && typeof p.then === "function") p.catch(() => {});
+      }
+    });
+  }
+
   /* ---------- Add to calendar (.ics download) ---------- */
-  // Thursday 27 August 2026, 11:00 AM – 2:00 PM IST (Asia/Kolkata, UTC+05:30)
+  // Saturday 29 August 2026, 11:00 AM – 2:00 PM IST (Asia/Kolkata, UTC+05:30)
   //  → 11:00 IST = 05:30 UTC,  14:00 IST = 08:30 UTC
   function pad(n) { return n < 10 ? "0" + n : "" + n; }
 
@@ -108,25 +121,25 @@
       );
     })();
 
-    const uid = "sabeeha-abdul-nasir-muhammed-shibin-wedding-2026-08-27@invite";
+    const uid = "sabeeha-abdul-nasir-muhammed-shibin-wedding-2026-08-29@invite";
     const lines = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//Sabeeha Abdul Nasir & Muhammed Shibin//Wedding Invitation//EN",
+      "PRODID:-// Muhammed Shibin & Sabeeha Abdul Nasir//Wedding Invitation//EN",
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
       "BEGIN:VEVENT",
       "UID:" + uid,
       "DTSTAMP:" + dtStamp,
-      "DTSTART:20260827T053000Z",
-      "DTEND:20260827T083000Z",
-      "SUMMARY:Wedding — Sabeeha Abdul Nasir & Muhammed Shibin",
-      "LOCATION:Green Land Palace Convention Centre, Athanipadi, Purathur, Malappuram, Kerala 676102",
-      "DESCRIPTION:Wedding of Sabeeha Abdul Nasir & Muhammed Shibin. Wedding will be followed by lunch reception. Your duas & presence mean a lot.",
+      "DTSTART:20260829T053000Z",
+      "DTEND:20260829T083000Z",
+      "SUMMARY:Wedding — Muhammed Shibin & Sabeeha Abdul Nasir",
+      "LOCATION:JAS Auditorium, Kozhikode – Palakkad Highway (NH 966), Vattambalam, Kumaramputhur, Mannarkkad, Palakkad, Kerala 678583",
+      "DESCRIPTION:Wedding of Muhammed Shibin & Sabeeha Abdul Nasir. Wedding will be followed by lunch reception. Your duas & presence mean a lot.",
       "BEGIN:VALARM",
       "TRIGGER:-P1D",
       "ACTION:DISPLAY",
-      "DESCRIPTION:Sabeeha & Shibin's Wedding is tomorrow",
+      "DESCRIPTION:Muhammed Shibin & Sabeeha Abdul Nasir's Wedding is tomorrow",
       "END:VALARM",
       "END:VEVENT",
       "END:VCALENDAR"
@@ -139,7 +152,7 @@
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement("a");
     a.href = url;
-    a.download = "Sabeeha-and-Shibin-Wedding.ics";
+    a.download = "Muhammed-Shibin-and-Sabeeha-Abdul-Nasir-Wedding.ics";
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {

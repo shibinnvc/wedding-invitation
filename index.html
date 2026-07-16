@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#16302a" />
-    <title>Sabeeha Abdul Nasir &amp; Muhammed Shibin &middot; 27 August 2026</title>
+    <meta name="theme-color" content="#3d2721" />
+    <title>Muhammed Shibin &amp; Sabeeha Abdul Nasir &middot; 29 August 2026</title>
     <meta
       name="description"
-      content="Sabeeha Abdul Nasir and Muhammed Shibin joyfully invite you to celebrate their Nikah on Thursday, 27 August 2026 at Green Land Palace Convention Centre, Malappuram."
+      content="Muhammed Shibin and Sabeeha Abdul Nasir joyfully invite you to celebrate their Nikah on Saturday, 29 August 2026 at JAS Auditorium, Mannarkkad."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="image" href="seal.png" />
+    <link rel="preload" as="image" href="bismillah.png" />
   </head>
   <body>
     <!-- ===== Decorative inline SVG sprite (florals · ornaments · icons) ===== -->
@@ -132,9 +134,9 @@
         <div class="envelope" id="envelope">
           <!-- Letter that rises out (sits behind the front face) -->
           <div class="env-letter" aria-hidden="true">
-            <p class="env-letter__ar" lang="ar" dir="rtl">بِسْمِ اللّٰهِ</p>
+            <img class="env-letter__bismillah" src="bismillah.png" alt="" />
             <svg class="env-letter__div" viewBox="0 0 280 28" aria-hidden="true"><use href="#orn-divider" /></svg>
-            <p class="env-letter__names">Sabeeha &amp; Shibin</p>
+            <p class="env-letter__names">Shibin &amp; Sabeeha</p>
             <p class="env-letter__date">27 &middot; 08 &middot; 2026</p>
           </div>
 
@@ -145,13 +147,16 @@
           <!-- Top flap -->
           <div class="env-flap" aria-hidden="true"></div>
 
+          <!-- Bismillah on the flap cover -->
+          <img class="env-bismillah" src="bismillah.png" alt="Bismillah al-Rahman al-Rahim" />
+
           <!-- Wax seal = the open button -->
           <button type="button" class="wax-seal" id="open-invitation" aria-label="Open invitation">
-            <span class="wax-seal__mono" aria-hidden="true">S<span class="wax-seal__amp">&amp;</span>S</span>
+            <img class="wax-seal__img" src="seal.png" alt="" aria-hidden="true" />
           </button>
         </div>
 
-        <p class="entry__couple">Sabeeha &amp; Shibin</p>
+        <p class="entry__couple">Shibin &amp; Sabeeha</p>
         <p class="entry__invited">You are invited</p>
         <p class="entry__hint" id="entry-hint">Tap the seal to open</p>
       </div>
@@ -171,12 +176,31 @@
         <svg class="frame-corner frame-corner--bl"><use href="#orn-corner" /></svg>
         <svg class="frame-corner frame-corner--br"><use href="#orn-corner" /></svg>
 
+        <img class="invite__bismillah-img" src="bismillah.png" alt="Bismillah al-Rahman al-Rahim" />
+
         <p class="invite__sub">With Allah&rsquo;s blessings and grace</p>
 
         <svg class="invite__div" aria-hidden="true"><use href="#orn-divider" /></svg>
 
+        <p class="invite__parents invite__parents--groom">
+          Late Mohammed Iqbal C H
+          <span class="amp">&amp;</span>
+          Salma P
+        </p>
+        <p class="invite__address">
+          Chelakkattuthodi House,<br />
+          Nayadikunnu, Mannarkkad
+        </p>
+        <p class="invite__intro">
+          request the pleasure of your presence at the wedding of their son
+        </p>
+
+        <h1 class="invite__name">Muhammed Shibin</h1>
+        <p class="invite__with"><span class="rule"></span> and <span class="rule"></span></p>
+        <h1 class="invite__name">Sabeeha<br>Abdul Nasir</h1>
+
         <p class="invite__parents">
-          Abdul Nasir Kunhi Moossa Cheracham
+          D/O Abdul Nasir K Moossa
           <span class="amp">&amp;</span>
           Rahimabi P V
         </p>
@@ -184,52 +208,39 @@
           Puthan Purayil House, Perumthiruthi,<br />
           Chennara, Mangalam, Tirur
         </p>
-        <p class="invite__intro">
-          joyfully invite you to the wedding of their daughter
-        </p>
-
-        <h1 class="invite__name">Sabeeha<br>Abdul Nasir</h1>
-        <p class="invite__with"><span class="rule"></span> and <span class="rule"></span></p>
-        <h1 class="invite__name">Muhammed Shibin</h1>
-
-        <p class="invite__parents invite__parents--groom">
-          S/O late Mohammed Iqbal C H
-          <span class="amp">&amp;</span>
-          Salma P
-        </p>
 
         <!-- Date + Venue cards -->
         <div class="cards">
           <div class="card card--date">
-            <p class="card__day">Thursday</p>
+            <p class="card__day">Saturday</p>
             <div class="card__month">
               <span class="card__m">AUG</span>
-              <span class="card__d">27</span>
+              <span class="card__d">29</span>
               <span class="card__y">2026</span>
             </div>
             <div class="card__time">
               <span>11 AM</span>
               <span class="card__time-sub">to 2 PM</span>
             </div>
-            <p class="card__hijri">14 Rabi&rsquo; al-Awwal 1448 AH</p>
+            <p class="card__hijri">17 Rabi&rsquo; al-Awwal 1448 AH</p>
           </div>
 
           <div class="card card--venue">
-            <p class="card__venue-name">GREEN LAND PALACE</p>
-            <p class="card__venue-sub">Convention Centre</p>
+            <p class="card__venue-name">JAS AUDITORIUM</p>
+            <p class="card__venue-sub">Vattambalam, Kumaramputhur</p>
             <p class="card__venue-area">
-              Athanipadi, Purathur,<br />
-              Malappuram, Kerala 676102
+              Kozhikode &ndash; Palakkad Highway (NH 966),<br />
+              Mannarkkad, Palakkad, Kerala 678583
             </p>
             <a
               class="btn-map"
               id="open-map"
-              href="https://www.google.com/maps/search/?api=1&amp;query=Green+Land+Palace+Convention+Centre+Athanipadi+Purathur+Kerala+676102"
+              href="https://www.google.com/maps/search/?api=1&amp;query=JAS+Auditorium+Kozhikode+Palakkad+Highway+Vattambalam+Kumaramputhur+Kerala+678583"
               target="_blank"
               rel="noopener noreferrer"
             >
               <svg aria-hidden="true"><use href="#i-pin" /></svg>
-              <span>OPEN IN MAPS</span>
+              <span>Open in maps</span>
             </a>
           </div>
         </div>
@@ -243,7 +254,7 @@
 
         <p class="invite__families">
           With love,<br />
-          The families of Sabeeha Abdul Nasir &amp; Muhammed Shibin
+          The families of Muhammed Shibin &amp; Sabeeha Abdul Nasir
         </p>
       </div>
 

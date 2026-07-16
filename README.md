@@ -18,19 +18,20 @@ calendar, mute / unmute).
    crescent wax seal. Tapping the seal lifts the flap, the letter rises out,
    and it cross-fades into the invitation while the nasheed begins.
 2. **Invitation** — Full details with floral decorations and:
-   - **Open in Maps** → Google Maps search for *Green Land Palace Convention
-     Centre, Athanipadi, Purathur, Malappuram, Kerala 676102*
-   - **Add to calendar** → downloads an `.ics` for Thu 27 Aug 2026, 11 AM – 2 PM IST
+   - **Open in Maps** → Google Maps search for *JAS Auditorium, Vattambalam,
+     Kumaramputhur, Mannarkkad, Palakkad, Kerala 678583*
+   - **Add to calendar** → downloads an `.ics` for Sat 29 Aug 2026, 11 AM – 2 PM IST
    - **Mute / Unmute** floating button (top-right) controls the background nasheed
 
 ## Details
 
 - **Bride** — Sabeeha Abdul Nasir, D/O Abdul Nasir Kunhi Moossa Cheracham &
   Rahimabi P.V — Puthan Purayil House, Perumthiruthi, Chennara, Mangalam, Tirur
-- **Groom** — Muhammed Shibin, S/O late Mohammed Iqbal C.H & Salma P
-- **Date** — Thursday, 27 August 2026 · 14 Rabi' al-Awwal 1448 AH · 11 AM – 2 PM
-- **Venue** — Green Land Palace Convention Centre, Athanipadi, Purathur,
-  Malappuram District, Kerala 676102
+- **Groom** — Muhammed Shibin, S/O Late Mohammed Iqbal C.H & Salma P —
+  Chelakkattuthodi House, Nayadikunnu, Mannarkkad
+- **Date** — Saturday, 29 August 2026 · 17 Rabi' al-Awwal 1448 AH · 11 AM – 2 PM
+- **Venue** — JAS Auditorium, Kozhikode – Palakkad Highway (NH 966), Vattambalam,
+  Kumaramputhur, Mannarkkad, Palakkad District, Kerala 678583
 
 ## Run it
 
