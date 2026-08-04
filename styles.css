@@ -214,8 +214,8 @@ body {
 .env-bismillah {
   position: absolute;
   left: 50%; top: 22%;
-  transform: translateX(-50%);
-  width: 38%;
+  transform: translate(-50%, -50%);
+  width: 36%;
   height: auto;
   z-index: 6;
   pointer-events: none;
@@ -237,14 +237,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10% 8% 0;
+  padding: 7% 8% 0;
   transition: transform 0.95s cubic-bezier(.2, .7, .2, 1);
 }
 .env-letter__bismillah {
   display: block;
-  width: 52%;
+  width: clamp(88px, 46%, 118px);
   height: auto;
-  margin: 0 auto 8px;
+  margin: 0 auto 5px;
   filter: drop-shadow(0 1px 1px rgba(120, 90, 36, 0.18));
 }
 .env-letter__div { width: 60%; height: 16px; color: var(--gold-foil-3); margin: 0 0 8px; }
