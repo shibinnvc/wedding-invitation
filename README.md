@@ -1,4 +1,4 @@
-# Sabeeha Abdul Nasir &amp; Muhammed Shibin — Nikah Invitation
+# Sabeeha Abdul Nasir &amp; Muhammed Shibin — Wedding Invitation
 
 A two-screen static wedding website. The entry is a wax-sealed **emerald &
 gold envelope** that opens on tap; behind it is a cream-paper, olive-botanical

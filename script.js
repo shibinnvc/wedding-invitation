@@ -14,22 +14,51 @@
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let opened = false;
+  let audioStarted = false;
 
   /* ---------- Start the nasheed (user gesture allows playback) ---------- */
+  // In-app browsers (WhatsApp / Instagram / Facebook) frequently reject the
+  // first play() even with a gesture, so we don't give up: startAudio() is
+  // retried on every real activation gesture (see the unlock listeners below)
+  // until one attempt actually begins playback.
   function startAudio() {
-    if (!audio) return;
-    audio.volume = 0.1;
+    if (!audio || audioStarted) return;
+    audio.volume = 0.7; // ignored on most mobile browsers, honoured on desktop
     const p = audio.play();
     if (p && typeof p.then === "function") {
       p.then(() => {
+        audioStarted = true;
         audioBtn && audioBtn.setAttribute("aria-pressed", "false");
         audioBtn && audioBtn.setAttribute("aria-label", "Mute music");
+        detachAudioUnlock();
       }).catch(() => {
-        // Autoplay blocked — reflect muted state so the button can start it.
+        // Blocked — reflect muted state; the unlock listeners stay attached so
+        // the next gesture retries.
         audioBtn && audioBtn.setAttribute("aria-pressed", "true");
         audioBtn && audioBtn.setAttribute("aria-label", "Play music");
       });
+    } else {
+      // Legacy browsers where play() returns no promise.
+      audioStarted = true;
+      detachAudioUnlock();
     }
+  }
+
+  /* ---------- Retry playback on real activation gestures ---------- */
+  // Only genuine activation gestures unlock audio — scrolling (wheel/touchmove)
+  // does NOT — so those are excluded here even though they still open the
+  // invitation below.
+  const audioUnlockEvents = ["click", "touchstart", "pointerdown", "keydown"];
+  function handleAudioUnlock() { startAudio(); }
+  function detachAudioUnlock() {
+    audioUnlockEvents.forEach((type) =>
+      window.removeEventListener(type, handleAudioUnlock)
+    );
+  }
+  if (audio) {
+    audioUnlockEvents.forEach((type) =>
+      window.addEventListener(type, handleAudioUnlock, { passive: true })
+    );
   }
 
   /* ---------- Reveal screen 2 ---------- */
@@ -64,7 +93,15 @@
     setTimeout(revealInvitation, 1750);
   }
 
-  if (openBtn) openBtn.addEventListener("click", openInvitation);
+  /* ---------- Open on any interaction (scroll, swipe, tap, key) ---------- */
+  // The wax seal stays as the visual affordance, but any user action opens it.
+  // openInvitation() guards on `opened`, so extra triggers after the first are
+  // harmless no-ops; `once` also detaches each listener as it fires.
+  function handleOpenTrigger() { openInvitation(); }
+
+  ["click", "wheel", "touchmove", "touchstart", "keydown"].forEach((type) =>
+    window.addEventListener(type, handleOpenTrigger, { once: true, passive: true })
+  );
 
   /* ---------- Mute / Unmute ---------- */
   if (audioBtn && audio) {
@@ -73,10 +110,12 @@
         const p = audio.play();
         if (p && typeof p.then === "function") {
           p.then(() => {
+            audioStarted = true;
             audioBtn.setAttribute("aria-pressed", "false");
             audioBtn.setAttribute("aria-label", "Mute music");
           }).catch(() => {});
         } else {
+          audioStarted = true;
           audioBtn.setAttribute("aria-pressed", "false");
           audioBtn.setAttribute("aria-label", "Mute music");
         }

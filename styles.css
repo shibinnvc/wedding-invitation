@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Sabeeha Abdul Nasir & Muhammed Shibin — Nikah Invitation
+   Sabeeha Abdul Nasir & Muhammed Shibin — Wedding Invitation
    Entry  : ornate emerald + gold-foil wax-sealed envelope (arabesque)
    Invite : cream paper · gold-framed · olive botanical · arch crest
    ========================================================================== */
@@ -323,16 +323,6 @@ body {
   transition: opacity 0.4s ease;
 }
 
-.entry__hint {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(13px, 2.6vw, 15px);
-  color: var(--ink-soft);
-  margin: 16px 0 0;
-  letter-spacing: 0.04em;
-  transition: opacity 0.4s ease;
-}
-.entry.is-leaving .entry__hint,
 .entry.is-leaving .entry__invited,
 .entry.is-leaving .entry__couple { opacity: 0; }
 
