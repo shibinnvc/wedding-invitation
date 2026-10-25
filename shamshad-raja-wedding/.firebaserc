@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "shamshad-raja-wedding"
+  },
+  "targets": {
+    "shamshad-raja-wedding": {
+      "hosting": {
+        "bride": [
+          "raja-shamshad-wedding"
+        ],
+        "groom": [
+          "shamshad-raja-wedding"
+        ]
+      }
+    }
+  }
+}

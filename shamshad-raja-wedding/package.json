@@ -1,0 +1,11 @@
+{
+  "name": "shamshad-raja-wedding",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "deploy": "firebase deploy --only hosting:bride,hosting:groom --project shamshad-raja-wedding",
+    "deploy:bride": "firebase deploy --only hosting:bride --project shamshad-raja-wedding",
+    "deploy:groom": "firebase deploy --only hosting:groom --project shamshad-raja-wedding"
+  }
+}

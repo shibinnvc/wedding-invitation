@@ -1,0 +1,9 @@
+{
+  "name": "wedding-invitation",
+  "version": "1.0.0",
+  "description": "Safwan K.A & Shahana A.P \u2014 Wedding Invitation",
+  "scripts": {
+    "dev": "npx serve . -p 5173",
+    "start": "npx serve . -p 5173"
+  }
+}
